@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 int	ft_isalpha(int c)
 {
-	return(ft_tolower(c) || ft_toupper(c));
+	if(c >= 65 && c <=90  || c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }
