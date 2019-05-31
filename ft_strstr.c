@@ -10,29 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include            "libft.h"
+#include          "libft.h"
 
-char                *ft_strstr(const char *str, const char *to_search)
+char                *ft_strstr (const char *str, const char *to_search)
 {
    const char *a;
    const char *b;
 
     b = to_search;
 
-    if(*b  == '\0')
+    if (*b  == '\0')
         return (char *)str;
 
-    if(*str == '\0')
+    if (*str == '\0')
         return (NULL);
 
-    while(*str != '\0')
+    while (*str != '\0')
     {
-        if(*str == *b)
+        if (*str == *b)
         {
             a = str;
-            while(*a == *b || *b== '\0')
+            while (*a == *b || *b== '\0')
             {
-                if(*b == '\0')
+                if (*b == '\0')
                     return (char *)str;
                 a++;
                 b++;
@@ -40,5 +40,5 @@ char                *ft_strstr(const char *str, const char *to_search)
         }
         str++;
     }
-    return(char *)to_search;
+    return (char *) to_search;
 }
