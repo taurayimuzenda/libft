@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include    "libft.h"
+#include	"libft.h"
 #include	<stdio.h>
 #include	<string.h>
 
-void				*ft_memmove(void *dest, const void *src, size_t n)
+void				*ft_memmove (void *dest, const void *src, size_t n)
 {
    const char *str1 = (char *)src;
    char *str2 = (char *)dest;
    char *temp = NULL;
 
-   while(n > 0)
+   while (n > 0)
    {
 	   *temp = *str1;
 	   n--;
    }
 
-   while(n > 0)
+   while (n > 0)
    {
 	   *str2 = *temp;
 	   n--;
@@ -37,14 +37,14 @@ void				*ft_memmove(void *dest, const void *src, size_t n)
 }
 int main ()
 {
-   char dest[] = "Kudzanai Gomera";
-   const char src[]  = "Ropa Kapita";
+   char dest[] = "Taurayi Muzenda";
+   const char src[]  = "Artwell Muzenda";
 
-   printf("Mine : %p\n", ft_memmove(dest, src, 9));
-   printf("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove(dest, src, 9);
-   printf("After memmove dest = %s, src = %s\n", dest, src);
+   printf ("Mine : %p\n", ft_memmove(dest, src, 9));
+   printf ("Before memmove dest = %s, src = %s\n", dest, src);
+   memmove (dest, src, 9);
+   printf ("After memmove dest = %s, src = %s\n", dest, src);
    
 
-   return(0);
+   return (0);
 }
