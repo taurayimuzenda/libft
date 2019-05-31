@@ -10,25 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include            "libft.h"
+#include	"libft.h"
 
-int				ft_isdigit(int i)
+int				ft_isdigit (int i)
 {
-	if	(i >= '0' && i <= '9')
+	if (i >= '0' && i <= '9')
 	{
-		return(1);
+		return (1);
 	}
 	else
-		return(0);
+		return (0);
 }
 
-int				ft_atoi(const char *str)
+int				ft_atoi (const char *str)
 {
 	int		i;
 	int		n;
 
 	i = 0;
-	   while((*str >= '\t' && *str <= '\r') || *str == 32)
+	   while ((*str >= '\t' && *str <= '\r') || *str == 32)
 		str++;
 	   if (*str == '-')
 		   n  = -1;
