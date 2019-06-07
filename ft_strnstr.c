@@ -6,51 +6,31 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 10:06:01 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/31 10:07:01 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/06 12:31:13 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	<stdio.h>
-#include	<string.h>
+#include "libft.h"
 
-
-char				*ft_strnstr(const char *haystack, const char *needle, size_t n)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
-	const char *a;
-	const char *b;
+	size_t i;
 
-	b = needle;
-
-	if (*b == '\0')
-		return (char *) haystack;
-	if (*haystack == '\0')
-		return (NULL);
-	while (*haystack != '\0' && n > 0 )
+	i = 0;
+	if (*needle == '\0')
 	{
-		if (*haystack == *b)
-		{
-			a = haystack;
-			while (*a == *b || *b == '\0')
-			{
-				if (*b == '\0')
-					return (char *) haystack;
-				a++;
-				b++;
-			}
-		}
-		haystack++;
-		n++;
+		return ((char *)haystack);
 	}
-	return (char *) needle;
+	while (*haystack && n)
+	{
+		if (needle[i] == *haystack)
+			i++;
+		else
+			i = 0;
+		if (needle[i] == '\0')
+			return ((char *)(haystack - i + 1));
+		haystack++;
+		n--;
+	}
+	return (NULL);
 }
-/*int				main (void)
-{
-	char *dest = "Hello World Taurayi is here";
-	char *src = "World";
-	char *result;
-	result = strnstr(dest, src, 10);
-	printf ("built: %s\n", result);
-	//printf ("strstr:  %s\n",strstr(dest, src));
-	printf ("mine: %s\n", ft_strnstr(dest, src, 10));
-	return (0);
-}*/

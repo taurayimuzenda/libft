@@ -5,21 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 12:33:46 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/27 13:07:58 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/05 11:55:42 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/05 16:56:49 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-main()
+char	*ft_strcat(char *dest, const char *src)
 {
-	char a[50] = "Hello";
-	char b[50]= "Good Morning";
-	close ();
-	strcat(a,b);
-	printf(" concatenated string = %s,"a);
-	getch();
-}
+	char *new;
 
+	new = dest;
+	while (*new != '\0')
+	{
+		new++;
+	}
+	while (*src != '\0')
+	{
+		*new = *src;
+		new++;
+		src++;
+	}
+	*new = '\0';
+	return (dest);
+}

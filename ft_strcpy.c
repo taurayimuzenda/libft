@@ -6,20 +6,22 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:08:51 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/27 12:29:16 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:57:39 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-main ()
+char	*ft_strcpy(char *dest, char *src)
 {
-	char a[50], b[50];
-	close();
-	printf("enter a source string");
-	scanf( %s,"a);
-	strcpy(b,a);
-	printf ("copied string = %s,"b);
-	getch();
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
+	{
+		dest[i] = src[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

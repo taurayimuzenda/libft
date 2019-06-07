@@ -6,15 +6,16 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:25:46 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/23 11:48:57 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/07 14:14:27 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
+
 int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
 	else
-	return (0);
+		return (0);
 }

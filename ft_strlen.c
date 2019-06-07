@@ -6,18 +6,18 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 11:40:07 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/27 12:08:27 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/06 15:24:20 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include "libft.h"
 
-main (c)
+size_t	ft_strlen(const char *c)
 {
-	char a[30] = "Hello,";
-	int l;
-	l = strlen(a);
-	prntf("length of the string = %d,l);
-	getch();
+	int		i;
+
+	i = 0;
+	while (c[i] != '\0')
+		i++;
+	return (i);
 }

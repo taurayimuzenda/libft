@@ -6,45 +6,26 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 10:01:46 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/31 10:02:09 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/06 16:43:56 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
-#include	<stdio.h>
-#include	<string.h>
+#include "libft.h"
 
-void				*ft_memmove (void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-   const char *str1 = (char *)src;
-   char *str2 = (char *)dest;
-   char *temp = NULL;
+	size_t	i;
+	char	*a;
+	char	*b;
 
-   while (n > 0)
-   {
-	   *temp = *str1;
-	   n--;
-   }
-
-   while (n > 0)
-   {
-	   *str2 = *temp;
-	   n--;
-   }
-
-   return (str2);
-
-}
-int main ()
-{
-   char dest[] = "Taurayi Muzenda";
-   const char src[]  = "Artwell Muzenda";
-
-   printf ("Mine : %p\n", ft_memmove(dest, src, 9));
-   printf ("Before memmove dest = %s, src = %s\n", dest, src);
-   memmove (dest, src, 9);
-   printf ("After memmove dest = %s, src = %s\n", dest, src);
-   
-
-   return (0);
+	i = n;
+	a = (char *)dst;
+	b = (char *)src;
+	if (a < b)
+		return (ft_memcpy(a, b, n));
+	if (n == 0 || a == b)
+		return (a);
+	while (i--)
+		a[i] = b[i];
+	return (a);
 }

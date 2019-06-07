@@ -6,15 +6,16 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/05/23 11:46:36 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
+
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
+	if (c >= 0 && c <= 0177)
 		return (1);
 	else
-	return (0);
+		return (0);
 }
