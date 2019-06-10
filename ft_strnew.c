@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 12:06:56 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 12:08:10 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char		*ft_strnew(size_t size)
 {
-	if (c >= 0 && c <= 0177)
-		return (1);
-	else
-		return (0);
+	char	*str;
+
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
 }

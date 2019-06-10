@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 11:58:28 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 11:59:20 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char		*ft_strsub(const char *s, unsigned int start, size_t len)
 {
-	if (c >= 0 && c <= 0177)
-		return (1);
-	else
-		return (0);
+	char	*s2;
+	size_t	i;
+
+	i = 0;
+	if (!s)
+		return (NULL);
+	s2 = (char *)s;
+	s2 = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s2)
+	{
+		return (NULL);
+	}
+	while (i < len)
+	{
+		s2[i] = s[start + i];
+		i++;
+	}
+	s2[i] = '\0';
+	return (s2);
 }

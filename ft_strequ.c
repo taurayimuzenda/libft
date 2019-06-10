@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 12:00:29 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 15:17:44 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	if (c >= 0 && c <= 0177)
-		return (1);
+	if (s1 && s2)
+	{
+		if (ft_strcmp((char *)s1,(char *)s2) == 0)
+			return (1);
+		else
+			return (0);
+	}
 	else
 		return (0);
 }
+

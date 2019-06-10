@@ -1,21 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 11:56:08 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 11:57:12 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+char		*ft_strtrim(const char *str)
 {
-	if (c >= 0 && c <= 0177)
-		return (1);
-	else
-		return (0);
+	char	*s;
+	int		i;
+	int		j;
+	int		len;
+
+	i = 0;
+	j = 0;
+	if (str == NULL)
+		return (NULL);
+	len = ft_strlen(str);
+	while (str[len - 1] == ' ' || str[len - 1] == '\t' || str[len - 1] == '\n')
+		len--;
+	if (len > 0)
+		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n')
+		{
+			i++;
+			len--;
+		}
+	s = ft_strnew(len);
+	while (s && j < len)
+	{
+		s[j] = str[i + j];
+		j++;
+	}
+	return (s);
 }

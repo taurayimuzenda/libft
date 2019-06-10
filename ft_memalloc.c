@@ -1,21 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:35:29 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/07 12:32:10 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 12:09:14 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 12:09:54 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int c)
+void	*ft_memalloc(size_t size)
 {
-	if (c >= 0 && c <= 0177)
-		return (1);
-	else
-		return (0);
+	void *str;
+
+	str = malloc(size);
+	if (str != '\0' && size != '\0')
+	{
+		ft_bzero((void *)str, size);
+		return (str);
+	}
+	return (NULL);
 }

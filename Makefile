@@ -6,7 +6,7 @@
 #    By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/30 12:48:36 by tmuzenda          #+#    #+#              #
-#    Updated: 2019/05/30 17:05:33 by tmuzenda         ###   ########.fr        #
+#    Updated: 2019/06/04 15:45:09 by tmuzenda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libft.a
 
 CC= gcc -c
 
-SRC= *.c *.h
+SRC= *.c
 
 OBJ= *.o
 
@@ -24,13 +24,14 @@ FLAGS= -Wall -Wextra -Werror
 
 $(NAME):
 	$(CC)  $(FLAGS) $(SRC) 
-	ar rc $(NAME) $(OBJ)
+	ar rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
 
-fclean:
-	rm -f $(NAME) *.gch
+fclean: clean
+	rm -f $(NAME)
+	rm -f *.gch
 
-re :fclean all				
+re : fclean all				
