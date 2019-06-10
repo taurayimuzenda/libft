@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 11:26:53 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/10 15:28:26 by tmuzenda         ###   ########.fr       */
+/*   Created: 2019/06/10 16:38:21 by tmuzenda          #+#    #+#             */
+/*   Updated: 2019/06/10 16:38:33 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		ft_putnbr_fd(-n, fd);
 	}
-	else if (n >=  10)
+	else if (n >= 10)
 	{
 		ft_putnbr_fd(n / 10, fd);
 		ft_putchar_fd(n % 10 + '0', fd);
