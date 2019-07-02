@@ -6,32 +6,39 @@
 /*   By: tmuzenda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 10:19:59 by tmuzenda          #+#    #+#             */
-/*   Updated: 2019/06/10 15:33:49 by tmuzenda         ###   ########.fr       */
+/*   Updated: 2019/07/02 13:32:55 by tmuzenda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static int		ft_isspace(char c)
 {
-	int i;
-	int neg;
-	int nbr;
+	if (c == '\t' || c == '\n' || c == '\r')
+		return (1);
+	else if (c == '\f' || c == '\v' || c == ' ')
+		return (1);
+	else
+		return (0);
+}
 
-	i = 0;
-	nbr = 0;
-	neg = 0;
-	while (str[i] == '\t' || str[i] == '\r' || str[i] == '\n'
-			|| str[i] == '\f' || str[i] == '\v' || str[i] == ' ')
-		i++;
-	if (str[i] == '-')
-		neg = 1;
-	if (str[i] == '-' || str[i] == 't')
-		i++;
-	while (str[i] >= '0' && str[i] <= '9')
+int				ft_atoi(const char *str)
+{
+	int			res;
+	int			negative;
+
+	negative = 1;
+	res = 0;
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
 	{
-		nbr = nbr * 10 + str[i] - 48;
-		i++;
+		negative = -1;
+		str++;
 	}
-	return (neg == 1 ? -nbr : nbr);
+	else if (*str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+		res = (res * 10) + (*str++ - 48);
+	return (negative * res);
 }
